@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Budget Estimator</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<script type="text/javascript" src="http://keepmout.com.au/budget-estimator/js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="http://keepmout.com.au/budget-estimator/js/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<script type="text/javascript" src="http://keepmout.com.au/budget-estimator/js/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="http://keepmout.com.au/budget-estimator/css/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<script type="text/javascript" src="http://keepmout.com.au/budget-estimator/js/budget_estimator.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://keepmout.com.au/budget-estimator/css/budget_estimator.css" media="screen" />
+
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$('.fancybox').fancybox();
+		});
+	</script>
+	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+			font-family: arial;
+			font-size: 12px;
+		}
+	</style>
+</head>
+<body>
+	
+	<a class="fancybox load_estimator" href="#estimator_box"><img src="http://keepmout.com.au/budget-estimator/images/budget-estimator-button.png"/></a>
+
+	<div id="estimator_box" style="width:450px;display: none;">
+		<div class="estimator-header">
+			<h3>Budget Estimator</h3>
+			<p>
+				Use our Budget Calculator to get an estimate of how much your Door will cost
+			</p>
+			<hr/>
+		</div>
+		<div id="error-handler"></div>
+		<div id="step1" class="steps" style="display:none;">
+			<h2>Select type of security door</h2>
+			<div class="the-fields">
+				<!-- Aluminum Door -->
+				<label>Aluminum Door</label> 
+				<input type="radio" name="aluminum_door" value="1" id="aluminum_door_1" class="radio_button"> <label for="aluminum_door_1" class="radio_label">1</label>
+				<input type="radio" name="aluminum_door" value="2" id="aluminum_door_2" class="radio_button"> <label for="aluminum_door_2" class="radio_label">2</label>
+				<input type="radio" name="aluminum_door" value="3" id="aluminum_door_3" class="radio_button"> <label for="aluminum_door_3" class="radio_label">3</label>
+				<input type="radio" name="aluminum_door" value="4" id="aluminum_door_4" class="radio_button"> <label for="aluminum_door_4" class="radio_label">4</label>
+				<input type="radio" name="aluminum_door" value="5" id="aluminum_door_5" class="radio_button"> <label for="aluminum_door_5" class="radio_label">5</label>
+				<input type="radio" name="aluminum_door" value="6" id="aluminum_door_6" class="radio_button"> <label for="aluminum_door_6" class="radio_label">6</label>
+				<input type="radio" name="aluminum_door" value="7" id="aluminum_door_7" class="radio_button"> <label for="aluminum_door_7" class="radio_label">7</label>
+				<input type="radio" name="aluminum_door" value="8" id="aluminum_door_8" class="radio_button"> <label for="aluminum_door_8" class="radio_label">8</label>
+				<div class="clearfix"></div>
+
+				<!-- Cast Aluminium Door -->
+				<label>Cast Aluminum Door</label> 
+				<input type="radio" name="cast_aluminum_door" value="1" id="cast_aluminum_door_1" class="radio_button" > <label for="cast_aluminum_door_1" class="radio_label">1</label>
+				<input type="radio" name="cast_aluminum_door" value="2" id="cast_aluminum_door_2" class="radio_button"> <label for="cast_aluminum_door_2" class="radio_label">2</label>
+				<input type="radio" name="cast_aluminum_door" value="3" id="cast_aluminum_door_3" class="radio_button"> <label for="cast_aluminum_door_3" class="radio_label">3</label>
+				<input type="radio" name="cast_aluminum_door" value="4" id="cast_aluminum_door_4" class="radio_button"> <label for="cast_aluminum_door_4" class="radio_label">4</label>
+				<input type="radio" name="cast_aluminum_door" value="5" id="cast_aluminum_door_5" class="radio_button"> <label for="cast_aluminum_door_5" class="radio_label">5</label>
+				<input type="radio" name="cast_aluminum_door" value="6" id="cast_aluminum_door_6" class="radio_button"> <label for="cast_aluminum_door_6" class="radio_label">6</label>
+				<input type="radio" name="cast_aluminum_door" value="7" id="cast_aluminum_door_7" class="radio_button"> <label for="cast_aluminum_door_7" class="radio_label">7</label>
+				<input type="radio" name="cast_aluminum_door" value="8" id="cast_aluminum_door_8" class="radio_button"> <label for="cast_aluminum_door_8" class="radio_label">8</label>
+				<input type="hidden" name="cast_aluminum_door" value="0" id="cast_aluminum_door_8" class="radio_button">
+
+				<div class="clearfix"></div>
+				
+				<!-- Stainless Steel  Door -->
+				<label>Stainless Steel  Door</label> 
+				<input type="radio" name="stainless_steel_door" value="1" id="stainless_steel_door_1" class="radio_button" > <label for="stainless_steel_door_1" class="radio_label">1</label>
+				<input type="radio" name="stainless_steel_door" value="2" id="stainless_steel_door_2" class="radio_button"> <label for="stainless_steel_door_2" class="radio_label">2</label>
+				<input type="radio" name="stainless_steel_door" value="3" id="stainless_steel_door_3" class="radio_button"> <label for="stainless_steel_door_3" class="radio_label">3</label>
+				<input type="radio" name="stainless_steel_door" value="4" id="stainless_steel_door_4" class="radio_button"> <label for="stainless_steel_door_4" class="radio_label">4</label>
+				<input type="radio" name="stainless_steel_door" value="5" id="stainless_steel_door_5" class="radio_button"> <label for="stainless_steel_door_5" class="radio_label">5</label>
+				<input type="radio" name="stainless_steel_door" value="6" id="stainless_steel_door_6" class="radio_button"> <label for="stainless_steel_door_6" class="radio_label">6</label>
+				<input type="radio" name="stainless_steel_door" value="7" id="stainless_steel_door_7" class="radio_button"> <label for="stainless_steel_door_7" class="radio_label">7</label>
+				<input type="radio" name="stainless_steel_door" value="8" id="stainless_steel_door_8" class="radio_button"> <label for="stainless_steel_door_8" class="radio_label">8</label>
+				<input type="hidden" name="stainless_steel_door" value="0" id="stainless_steel_door_8" class="radio_button">
+ 
+				<div class="clearfix"></div>
+				
+				<!-- Stainless Steel  Door -->
+				<label>Fly Screen</label> 
+				<input type="radio" name="fly_screen" value="1" id="fly_screen_1" class="radio_button"> <label for="fly_screen_1" class="radio_label">1</label>
+				<input type="radio" name="fly_screen" value="2" id="fly_screen_2" class="radio_button"> <label for="fly_screen_2" class="radio_label">2</label>
+				<input type="radio" name="fly_screen" value="3" id="fly_screen_3" class="radio_button"> <label for="fly_screen_3" class="radio_label">3</label>
+				<input type="radio" name="fly_screen" value="4" id="fly_screen_4" class="radio_button"> <label for="fly_screen_4" class="radio_label">4</label>
+				<input type="radio" name="fly_screen" value="5" id="fly_screen_5" class="radio_button"> <label for="fly_screen_5" class="radio_label">5</label>
+				<input type="radio" name="fly_screen" value="6" id="fly_screen_6" class="radio_button"> <label for="fly_screen_6" class="radio_label">6</label>
+				<input type="radio" name="fly_screen" value="7" id="fly_screen_7" class="radio_button"> <label for="fly_screen_7" class="radio_label">7</label>
+				<input type="radio" name="fly_screen" value="8" id="fly_screen_8" class="radio_button"> <label for="fly_screen_8" class="radio_label">8</label>
+				<input type="hidden" name="fly_screen" value="0" id="fly_screen_8" class="radio_button">
+			</div>
+			<div class="clearfix"></div>
+			<div class="next-btn">
+				<a class="proceed_step2" href="#">Next</a>
+			</div>
+		</div>
+		<div id="step2" class="steps" style="display:none;">
+			<h2>Design Style</h2>
+			<div class="the-fields">
+				<input type="radio" name="design_style" value="Diamond Grill" id="diamond_grill" class="radio_button"> <label for="diamond_grill">Diamond Grill</label> 
+				<div class="clearfix"></div>
+				<input type="radio" name="design_style" value="Security Bars" id="security_bars" class="radio_button"> <label for="security_bars">Security Bars</label> 
+				<div class="clearfix"></div>
+				<input type="radio" name="design_style" value="Hinged Door" id="hinged_door" class="radio_button"> <label for="hinged_door">Hinged Door</label> 
+				<div class="clearfix"></div>
+				<input type="radio" name="design_style" value="Sliding Door" id="sliding_door" class="radio_button"> <label for="sliding_door">Sliding Door</label> 
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="next-btn">
+				<a href="javascript:step1()">Back</a>
+				<a class="proceed_step3" href="#">Next</a>
+			</div>
+		</div>
+		<div id="step3" class="steps" style="display:none;">
+			<h2>Enter your details!</h2>
+			<div class="the-fields">
+				<label for="name">Full Name:</label>
+				<input type="text" name="name" id="name"/>
+				<label for="email">Email:</label>
+				<input type="text" name="email" id="email"/>
+				<label for="phone">Phone:</label>
+				<input type="text" name="phone" id="phone"/>
+			</div>
+			<div class="next-btn">
+				<a href="javascript:step2()">Back</a>
+				<a href="#" class="calculate">Calculate</a>
+			</div>
+		</div>
+		<div id="finalstep" class="steps" style="display:none;">
+			<div class="the-result-wrapper">
+				<p>Your approximate budget is:</p>
+				<div class="the-result">
+				</div>
+				<hr/>
+				<p>This estimate should only be used as a guide. We will get in touch with you to provide you with a more accurate quote if you require one. </p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
